@@ -1,0 +1,64 @@
+<html>
+    <head>
+      <Link rel="stylesheet"  href="../boot strap/bootstrap.css"> 
+      <Link rel="stylesheet"  href="../boot strap/bootstrap.bundle.js">
+        <Link rel="stylesheet"  href="../boot strap/jquery.js">        
+          <style>
+          div{
+            display: flex;
+            background-color: black;
+            color: white;
+            border: 4px solid white;
+            border-radius: 10px;
+          }
+          h1{
+            padding-left: 60px;
+          }
+          </style>
+  <script>
+  function aa()
+  {
+    var a=new Date();
+    var h=a.getHours();
+    var date=a.getDate();
+    var year=a.getFullYear();
+    var month=a.getMonth();
+    var day=a.getDay();
+    var amonth=["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
+    var aday=["sun","mon","tue","wed","thu","fri","sat"];
+   document.getElementById("c").innerHTML=aday[day]+" "+amonth[month]+" "+year+" "+date;
+
+
+    if(h>=6&&h<11)
+    {
+      document.getElementById("a").innerHTML="good morning";
+    }
+    else if(h>=11&&h<16)
+    {
+      document.getElementById("a").innerHTML="good afternoon";
+    }
+    else if(h>=16&&h<19){
+      document.getElementById("a").innerHTML="good evening";
+    }
+    else{
+      document.getElementById("a").innerHTML="good night";
+    }
+    document.getElementById("b").innerHTML=a.toLocaleTimeString();
+  }
+  function bb()
+  {
+    setInterval(aa);
+
+  }
+</script>
+  </head>
+  <body  onload="bb()"  >
+    <div>
+      <h1>Amazon</h1>
+     
+       <h1 id="a" ></h1>
+       <h1 id="b"></h1>
+       <h1 id="c"></h1>
+    </div>
+      </body>
+</html>
